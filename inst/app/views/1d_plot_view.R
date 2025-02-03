@@ -189,7 +189,6 @@ output$cor_matrix_plot <- renderPlot({
   x <- initial_analysis()
   
   y <- x$cor_matrix
-  
   plotCor(as.matrix(y), my_method = input$cor_style)
   
 })

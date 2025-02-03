@@ -15,11 +15,10 @@ package_report <- reactive({
       "DT", 
       "factoextra",
       "FactoMineR",
-      'e1071',
       'GGally',
       'tidyr',
       'RColorBrewer',
-      'caret', 'nnet', 'DMwR', 'randomForest')
+      'caret', 'nnet', 'randomForest')
     )
 })
 

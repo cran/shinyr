@@ -19,7 +19,6 @@ dependency_report <- getLibraryReport(
     "DT", 
     "factoextra",
     "FactoMineR",
-    'e1071',
     'GGally',
     'tidyr',
     'RColorBrewer',

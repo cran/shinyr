@@ -25,10 +25,11 @@ regressionModelMetrics <- function(actuals, predictions, model) {
   mae <- mean(abs(actuals - predictions))
   rmse <- sqrt(mse)
   mape <- mean(abs(actuals - predictions) / abs(actuals))
-    
+
   list(AIC = aic, BIC = bic, MAE = round(mae, digits = 2),
        MSE = round(mse, digits = 2), RMSE = round(rmse, digits = 2),
-       MAPE = round(mape, digits = 2), Corelation = round(cor(predictions, actuals), digits = 2), r.squared = round(r.squared, digits = 2), adj.r.squared = round(adj.r.squared, digits = 2))
-  
+       MAPE = round(mape, digits = 2),
+       Corelation = round(cor(predictions, actuals), digits = 2),
+       r.squared = round(r.squared, digits = 2),
+       adj.r.squared = round(adj.r.squared, digits = 2))
 }
-

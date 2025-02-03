@@ -1,20 +1,26 @@
-## ----setup, include=FALSE-----------------------------------------------------
-knitr::opts_chunk$set(echo = TRUE)
+## ----include = FALSE----------------------------------------------------------
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+
+## ----setup--------------------------------------------------------------------
+library(shinyr)
 
 ## ----eval=FALSE---------------------------------------------------------------
-#  install.packages("shinyr")
-#  library(shinyr)
+# install.packages("shinyr")
+# library(shinyr)
 
-## ---- eval = FALSE, warnings = FALSE------------------------------------------
-#  library(shinyr)
-#  shinyr::shineMe()
+## ----eval = FALSE, warnings = FALSE-------------------------------------------
+# library(shinyr)
+# shinyr::shineMe()
 
-## ---- warning=FALSE, message=FALSE--------------------------------------------
+## ----warning=FALSE, message=FALSE---------------------------------------------
 library(shinyr)
 dsets <- shinyr::valid_sets()
 knitr::kable(dsets)
 
-## ---- warning=FALSE, message=FALSE--------------------------------------------
+## ----warning=FALSE, message=FALSE---------------------------------------------
 dsets$Item <- as.character(dsets$Item)
 mtcars <- get(dsets$Item[dsets$Item == "mtcars"])
 knitr::kable(head(mtcars))
@@ -22,17 +28,17 @@ knitr::kable(head(mtcars))
 ## -----------------------------------------------------------------------------
 getnumericCols(mtcars)
 
-## ---- warning=FALSE, echo=FALSE-----------------------------------------------
+## ----warning=FALSE, echo=FALSE------------------------------------------------
 splitAndGet("**shinyr** is developed to build dynamic shiny based dashboards to analyze the data of your choice.  It provides simple yet genius dashboard design to subset the data, perform exploratory analysis and predictive analysis by means of")
 
-## ---- warning=FALSE, echo=FALSE-----------------------------------------------
+## ----warning=FALSE, echo=FALSE------------------------------------------------
 x <- getFeqTable("shinyr is developed to build dynamic shiny based dashboards to analyze the data of your choice.  It provides simple yet genius dashboard design to subset the data, perform exploratory analysis and predictive analysis by means of")
 knitr::kable(x)
 
-## ---- warning=FALSE-----------------------------------------------------------
+## ----warning=FALSE------------------------------------------------------------
 getWordCloud(x)
 
-## ---- echo=FALSE, warning=FALSE-----------------------------------------------
+## ----echo=FALSE, warning=FALSE------------------------------------------------
 res <- getDataInsight(mtcars)
 knitr::kable(res$Types)
 
